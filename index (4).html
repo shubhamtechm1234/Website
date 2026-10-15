@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>careerinitwithshubham | IT Training</title>
+<meta name="description" content="careerinitwithshubham — practical training in Linux, AWS, Shell Scripting, Ansible and SQL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap');
+:root{
+  --bg:#050714; --bg2:#0a1024; --panel:#0d1833; --panel2:#142142;
+  --text:#f8fbff; --muted:#9eabc2; --cyan:#58e7ff; --blue:#668cff;
+  --purple:#7c6cff; --pink:#e978ff; --green:#59e6b4; --gold:#ffd36a;
+  --line:rgba(255,255,255,.11); --shadow:0 30px 80px rgba(0,0,0,.42);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 8% 8%,rgba(88,231,255,.10),transparent 24%),radial-gradient(circle at 92% 18%,rgba(124,108,255,.15),transparent 30%),radial-gradient(circle at 50% 95%,rgba(82,115,255,.08),transparent 32%),#050714}
+body:after{content:"";position:fixed;inset:0;z-index:-2;opacity:.3;background-image:linear-gradient(rgba(92,130,200,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(92,130,200,.06) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,black,transparent 95%)}
+.container{width:min(1180px,92%);margin:auto}
+/* NAV */
+.navbar{height:76px;position:sticky;top:0;z-index:100;background:rgba(4,9,22,.82);backdrop-filter:blur(22px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}.brand-mark{width:45px;height:45px;border-radius:14px;display:grid;place-items:center;font-weight:800;background:linear-gradient(135deg,#3978ff,#8b5cf6 65%,#ec63ff);box-shadow:0 10px 35px rgba(91,77,255,.4),inset 0 1px 0 rgba(255,255,255,.35)}.brand-text{font-family:Manrope;font-size:18px;font-weight:800;letter-spacing:-.04em}.nav-btn{padding:10px 17px;border-radius:12px;color:#fff;text-decoration:none;font-size:13px;font-weight:800;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.055);box-shadow:inset 0 1px 0 rgba(255,255,255,.08);transition:.25s}.nav-btn:hover{transform:translateY(-2px);border-color:rgba(139,92,246,.5);background:rgba(139,92,246,.13)}
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:92px 0 105px;background:radial-gradient(circle at 78% 30%,rgba(88,231,255,.10),transparent 23%),radial-gradient(circle at 18% 15%,rgba(124,108,255,.18),transparent 30%),linear-gradient(135deg,#050714,#0a142b 58%,#10122d)}
+.hero:before{content:"";position:absolute;width:520px;height:520px;left:-260px;top:-190px;border:1px solid rgba(53,216,255,.10);border-radius:50%;box-shadow:0 0 0 70px rgba(53,216,255,.018),0 0 0 140px rgba(139,92,246,.014)}
+.hero:after{content:"";position:absolute;right:-160px;bottom:-250px;width:600px;height:600px;border:1px solid rgba(139,92,246,.12);border-radius:50%;box-shadow:0 0 0 70px rgba(139,92,246,.018),0 0 0 150px rgba(53,216,255,.012)}
+.hero-grid{display:grid;grid-template-columns:1fr .9fr;gap:55px;align-items:center;position:relative;z-index:2}.eyebrow{font-size:11px;letter-spacing:.2em;font-weight:800;color:var(--cyan);display:inline-flex;align-items:center;gap:9px;margin-bottom:16px}.eyebrow:before{content:"";width:28px;height:2px;background:linear-gradient(90deg,var(--gold),var(--pink));border-radius:4px;box-shadow:0 0 12px rgba(255,200,92,.45)}
+.hero h1{font-family:Manrope;font-size:clamp(44px,5.8vw,76px);line-height:.99;letter-spacing:-.065em;max-width:760px}.hero h1 .gradient{background:linear-gradient(100deg,#fff 5%,#64e7ff 38%,#8b7dff 70%,#ffc85c 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 10px 35px rgba(70,100,255,.15)}.hero-copy{font-size:18px;color:#a9b6ca;max-width:650px;margin:24px 0 30px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.primary-btn,.secondary-btn{padding:14px 20px;border-radius:13px;text-decoration:none;font-weight:800;transition:.25s}.primary-btn{color:#07101f;background:linear-gradient(135deg,#ffffff,#b9f4ff 48%,#c8bcff);box-shadow:0 16px 35px rgba(88,231,255,.20)}.primary-btn:hover{transform:translateY(-3px);box-shadow:0 20px 42px rgba(53,216,255,.28)}.secondary-btn{color:#fff;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.055);backdrop-filter:blur(10px)}.secondary-btn:hover{transform:translateY(-3px);border-color:rgba(139,92,246,.55);background:rgba(139,92,246,.12)}.trust-row{display:flex;gap:34px;margin-top:42px}.trust-row div{display:flex;flex-direction:column}.trust-row strong{font-family:Manrope;font-size:20px}.trust-row span{font-size:12px;color:#8291a9}
+/* HERO 3D */
+.visual-wrap{position:relative;min-height:455px;display:grid;place-items:center;perspective:1400px}.glow{position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(53,216,255,.18),rgba(139,92,246,.12) 45%,transparent 70%);filter:blur(18px)}.device{width:min(500px,100%);border:1px solid rgba(255,255,255,.15);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.035));backdrop-filter:blur(22px);box-shadow:0 40px 110px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.17);overflow:hidden;position:relative;z-index:2;transform:rotateX(5deg) rotateY(-8deg) rotateZ(1deg);transform-style:preserve-3d}.device:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.10),transparent 32%,rgba(139,92,246,.06));pointer-events:none}.device-top{height:50px;padding:0 18px;display:flex;align-items:center;gap:7px;border-bottom:1px solid rgba(255,255,255,.09);background:rgba(0,0,0,.20)}.device-top i{width:9px;height:9px;border-radius:50%;background:#6c7b91}.device-top span{margin-left:auto;color:#7d8ea6;font-size:10px}.device-body{padding:28px}.code-line{font:13px/2 ui-monospace,SFMono-Regular,monospace;color:#dce6f5}.code-line .p{color:#62e4ff}.code-line .g{color:#68e0ad}.code-line .v{color:#b79cff}.skill-stack{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin-top:19px}.skill{border:1px solid rgba(255,255,255,.11);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(0,0,0,.13));border-radius:14px;padding:13px;color:#eef4ff;font-weight:800;font-size:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 12px 25px rgba(0,0,0,.12)}.skill small{display:block;color:#8495ae;font-weight:500;margin-top:2px}.badge-float{position:absolute;z-index:4;right:-3px;bottom:25px;background:linear-gradient(135deg,#fff,#edf0ff);color:#10182b;border-radius:16px;padding:13px 17px;box-shadow:0 20px 45px rgba(0,0,0,.34);font-size:12px;font-weight:900}.badge-float span{color:#7c3aed}
+/* COURSES */
+.courses-section{position:relative;overflow:hidden;padding:105px 0 120px;background:linear-gradient(180deg,#071023 0%,#08142a 48%,#060b18 100%)}.courses-section:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(53,216,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.045) 1px,transparent 1px);background-size:50px 50px;opacity:.7}.courses-section:after{content:"";position:absolute;width:700px;height:700px;left:-400px;top:300px;border-radius:50%;border:1px solid rgba(53,216,255,.08);box-shadow:0 0 0 100px rgba(53,216,255,.018),0 0 0 200px rgba(139,92,246,.012)}.courses-section .container{position:relative;z-index:2}.section-heading{text-align:center;max-width:760px;margin:0 auto 55px}.section-heading h2{font-family:Manrope;font-size:clamp(34px,4vw,48px);line-height:1.05;letter-spacing:-.055em;color:#fff}.section-heading p{color:#95a4bc;margin-top:13px;font-size:15px}.section-heading .eyebrow{justify-content:center}
+.course-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;perspective:1600px}.course-card{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:650px;padding:23px;border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.13);box-shadow:0 28px 70px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.13);backdrop-filter:blur(18px);transform-style:preserve-3d;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}.course-card:before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,#35d8ff,#4d7cff,#8b5cf6,#ec63ff,#ffc85c);box-shadow:0 0 20px rgba(139,92,246,.35)}.course-card:after{content:"";position:absolute;width:230px;height:230px;right:-130px;top:-130px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.16),transparent 68%);pointer-events:none}.course-card:hover{transform:translateY(-10px) rotateX(2deg) rotateY(-1deg);border-color:rgba(139,92,246,.42);box-shadow:0 40px 95px rgba(0,0,0,.46),0 0 35px rgba(139,92,246,.10),inset 0 1px 0 rgba(255,255,255,.18)}.course-card.featured{border-color:rgba(77,124,255,.38);background:linear-gradient(145deg,rgba(77,124,255,.12),rgba(255,255,255,.035))}.course-card.featured:after{content:"POPULAR";position:absolute;right:18px;top:17px;width:auto;height:auto;border-radius:999px;padding:7px 11px;font-size:9px;letter-spacing:.16em;font-weight:900;color:#3f2f87;background:linear-gradient(135deg,#fff,#ede7ff);box-shadow:0 12px 28px rgba(0,0,0,.25);z-index:5}
+.course-visual{height:220px;flex:none;border-radius:20px;margin-bottom:22px;position:relative;overflow:hidden;isolation:isolate;transform:translateZ(14px);border:1px solid rgba(255,255,255,.15);box-shadow:inset 0 1px 0 rgba(255,255,255,.23),0 22px 40px rgba(0,0,0,.30)}.course-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.12),transparent 35%,rgba(255,255,255,.035));pointer-events:none}.course-visual:after{content:"";position:absolute;inset:auto -30px -100px;height:190px;border-radius:50%;background:rgba(255,255,255,.055);filter:blur(5px);z-index:-1}.mini-top{height:39px;padding:0 14px;display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.23);border-bottom:1px solid rgba(255,255,255,.10);color:#7f91aa;font:10px ui-monospace}.mini-top i{width:8px;height:8px;border-radius:50%;background:#718098}.mini-top span{margin-left:auto}.mini-code{font:14px/1.85 ui-monospace;color:#e0e8f5;padding:24px}.mini-code b{color:#63e4ff}.mini-code em{color:#67e2ad;font-style:normal}.mini-code strong{color:#ffc85c}.visual-badge{position:absolute;right:14px;bottom:13px;padding:8px 11px;border-radius:11px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:10px;font-weight:900;backdrop-filter:blur(12px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+.cloud-3d{background:radial-gradient(circle at 18% 18%,rgba(53,216,255,.22),transparent 28%),linear-gradient(145deg,#10234c,#273b78)}.cloud-shape{position:absolute;font-size:92px;left:50%;top:43%;transform:translate(-50%,-50%);color:#eefcff;filter:drop-shadow(0 20px 18px rgba(0,0,0,.28));text-shadow:0 0 28px rgba(53,216,255,.15)}.service-chip{position:absolute;padding:9px 13px;border-radius:12px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.20);color:#fff;font-size:10px;font-weight:900;box-shadow:0 10px 22px rgba(0,0,0,.16);backdrop-filter:blur(9px)}.s1{left:14%;top:23%}.s2{right:14%;top:22%}.s3{left:15%;bottom:22%}.s4{right:14%;bottom:22%}
+.shell-3d{background:radial-gradient(circle at 78% 18%,rgba(236,99,255,.25),transparent 34%),linear-gradient(145deg,#1b1132,#45275f)}.shell-window{margin:27px;border-radius:15px;padding:19px;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.14);font:13px/1.7 ui-monospace;color:#e5dcff;box-shadow:0 18px 35px rgba(0,0,0,.24)}.shell-window span{color:#65e1ae}.shell-window b{color:#ffc85c}
+.ansible-3d{background:radial-gradient(circle at 22% 20%,rgba(255,200,92,.18),transparent 28%),linear-gradient(145deg,#10253b,#18474c)}.gear{position:absolute;color:#67e2ad;text-shadow:0 15px 25px rgba(0,0,0,.35)}.gear-a{font-size:72px;left:28px;top:28px;transform:rotate(17deg)}.gear-b{font-size:42px;left:79px;top:90px;transform:rotate(-12deg);color:#ffc85c}.playbook{position:absolute;right:18px;top:28px;width:225px;border-radius:15px;padding:18px;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.13);font:12px/1.75 ui-monospace;color:#dce6f3}.playbook span{color:#63e4ff}.playbook b{color:#67e2ad}
+.sql-3d{background:radial-gradient(circle at 75% 15%,rgba(53,216,255,.20),transparent 32%),linear-gradient(145deg,#082b39,#16576a)}.db-cylinder{position:absolute;left:42px;top:35px;width:110px;height:130px;border-radius:50%/18%;background:linear-gradient(90deg,#65e3ea,#238796);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25),0 25px 32px rgba(0,0,0,.24);display:grid;place-items:center;color:#fff;font-family:Manrope;font-weight:800;font-size:25px}.db-cylinder:before,.db-cylinder:after{content:"";position:absolute;left:0;width:100%;height:34px;border:2px solid rgba(255,255,255,.22);border-radius:50%}.db-cylinder:before{top:-1px}.db-cylinder:after{bottom:-1px}.db-cylinder i{position:absolute;left:12px;right:12px;height:1px;background:rgba(255,255,255,.16)}.db-cylinder i:nth-of-type(1){top:42px}.db-cylinder i:nth-of-type(2){top:68px}.db-cylinder i:nth-of-type(3){top:94px}.query-card{position:absolute;right:20px;top:34px;width:250px;border-radius:15px;padding:21px;background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.13);font:13px/1.75 ui-monospace;color:#d9e7f3;box-shadow:0 18px 35px rgba(0,0,0,.22)}.query-card b{color:#67e2ad}.query-card strong{color:#ffc85c}
+.course-tag{font-size:10px;letter-spacing:.18em;font-weight:900;color:#9a8cff;text-transform:uppercase}.course-card h3{font-family:Manrope;font-size:clamp(27px,3vw,36px);line-height:1.06;letter-spacing:-.055em;margin:8px 0 13px;transform:translateZ(18px);text-shadow:0 4px 0 rgba(0,0,0,.24),0 13px 28px rgba(0,0,0,.28)}.course-linux h3{background:linear-gradient(100deg,#65e9f7,#4d7cff 48%,#a98cff);-webkit-background-clip:text;color:transparent}.course-aws h3{background:linear-gradient(100deg,#67eaff,#5b7fff 48%,#ffc85c);-webkit-background-clip:text;color:transparent}.course-shell h3{background:linear-gradient(100deg,#d2c0ff,#a86cff 48%,#ff72bd);-webkit-background-clip:text;color:transparent}.course-ansible h3{background:linear-gradient(100deg,#72edbb,#3fd79a 50%,#ffc85c);-webkit-background-clip:text;color:transparent}.course-sql h3{background:linear-gradient(100deg,#6deaf2,#22c6c9 50%,#6f91ff);-webkit-background-clip:text;color:transparent}.course-card p{font-size:15px;color:#aebbd0;min-height:48px}.course-card ul{list-style:none;border-top:1px solid rgba(255,255,255,.09);padding-top:18px;margin:20px 0 24px}.course-card li{font-size:14px;color:#c5cfde;margin:10px 0}.course-card li:before{content:"✓";color:#57e7b0;font-weight:900;margin-right:10px;text-shadow:0 0 12px rgba(87,231,176,.45)}.course-bottom{margin-top:auto}.price{font-family:Manrope;font-size:33px;font-weight:800;letter-spacing:-.055em;margin-bottom:17px;color:#fff;text-shadow:0 4px 0 rgba(0,0,0,.25),0 10px 25px rgba(0,0,0,.22)}.price small{font-family:Inter;font-size:12px;color:#96a5bb;font-weight:500}.contact-price{font-size:33px}.enroll-btn{width:100%;padding:15px;border-radius:13px;border:1px solid rgba(255,255,255,.16);background:linear-gradient(135deg,#586fff,#7867ff 52%,#a05cff)!important;color:#fff!important;font-weight:900;cursor:pointer;transition:.25s;box-shadow:0 14px 30px rgba(113,60,255,.34),inset 0 1px 0 rgba(255,255,255,.22)}.enroll-btn:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(113,60,255,.45),inset 0 1px 0 rgba(255,255,255,.28)}
+/* WHY */
+.section.light{position:relative;padding:100px 0;background:linear-gradient(180deg,#060b18,#09132a);overflow:hidden}.section.light:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(53,216,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.035) 1px,transparent 1px);background-size:48px 48px}.section.light .container{position:relative;z-index:1}.section.light .section-heading h2{color:#fff}.section.light .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.benefits>div{padding:26px;border:1px solid rgba(255,255,255,.11);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));border-radius:19px;backdrop-filter:blur(12px);box-shadow:0 18px 40px rgba(0,0,0,.24);transition:.25s}.benefits>div:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.35)}.benefits b{font-size:11px;color:#ffc85c;letter-spacing:.13em}.benefits h3{font-family:Manrope;margin:10px 0 5px}.benefits p{font-size:14px;color:#94a4bb}
+/* PREMIUM ENROLLMENT MODAL */
+.modal{display:none;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.modal-backdrop{position:absolute;inset:0;background:rgba(2,5,15,.78);backdrop-filter:blur(11px)}.modal-box{position:relative;background:linear-gradient(145deg,#0b1228,#101a36 55%,#151044);color:#f8fbff;width:min(560px,100%);max-height:92vh;overflow:auto;border-radius:25px;padding:34px;box-shadow:0 40px 110px rgba(0,0,0,.5);z-index:1;border-top:4px solid #7c3aed}.close{position:absolute;right:17px;top:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.08);width:38px;height:38px;border-radius:50%;font-size:25px;color:#d7def0;cursor:pointer}.modal-head h2{font-family:Manrope;font-size:31px;letter-spacing:-.045em}.modal-head p{color:#9eabc2;font-size:14px;margin:4px 0 22px}.modal form label{display:block;font-size:13px;font-weight:800;margin:15px 0;color:#f5f7ff}.modal input{display:block;width:100%;margin-top:7px;border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 15px;font:inherit;outline:none;background:rgba(2,7,20,.72);color:#fff}.modal input::placeholder{color:#71809a}.modal input:focus{border-color:#7957ef;box-shadow:0 0 0 4px rgba(121,87,239,.11)}.submit-btn{width:100%;margin-top:10px;border:0;background:linear-gradient(135deg,#713cff,#a855f7);color:#fff;padding:14px;border-radius:12px;font-weight:900;cursor:pointer;font-size:15px;box-shadow:0 12px 25px rgba(113,60,255,.25)}.submit-btn:disabled{opacity:.55}.form-note,.form-status{font-size:11px;color:#8e9bb3;text-align:center;margin-top:12px}.form-status.success{color:#159a70;font-weight:800}.form-status.error{color:#d44755;font-weight:800}
+footer{background:#030610;color:#7e8ca4;padding:30px 0;font-size:12px;border-top:1px solid rgba(255,255,255,.07)}.footer-inner{display:flex;justify-content:space-between;gap:15px}.footer-inner span:first-child{color:#e5ebf6;font-weight:800}
+@media(max-width:920px){.hero-grid{grid-template-columns:1fr}.visual-wrap{min-height:400px}.course-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.navbar{height:70px}.brand-text{font-size:15px}.nav-btn{display:none}.hero{padding:65px 0 75px}.hero-grid{gap:42px}.hero h1{font-size:43px}.hero-copy{font-size:16px}.visual-wrap{min-height:350px}.device{transform:none}.courses-section{padding:75px 0 90px}.course-grid{grid-template-columns:1fr;gap:22px}.course-card{min-height:0;padding:20px}.course-visual{height:200px}.course-card h3{font-size:31px}.section.light{padding:75px 0}.section.light .benefits{grid-template-columns:1fr}.trust-row{gap:18px}.trust-row strong{font-size:18px}.trust-row span{font-size:11px}}
+@media(max-width:480px){.container{width:min(100% - 28px,1180px)}.brand-mark{width:43px;height:43px}.brand-text{font-size:14px}.hero h1{font-size:39px}.hero-copy{font-size:15px}.trust-row{display:grid;grid-template-columns:1fr 1fr}.device-body{padding:20px}.skill-stack{gap:8px}.skill{padding:11px 10px}.badge-float{right:0;bottom:12px}.course-card{border-radius:24px}.course-visual{height:185px}.mini-code{padding:20px;font-size:13px}.cloud-shape{font-size:76px}.query-card{width:210px;right:12px}.db-cylinder{left:24px;width:95px}.playbook{right:10px;width:195px}.shell-window{margin:22px;padding:16px}.modal-box{padding:27px 22px}.modal-head h2{font-size:28px}.footer-inner{flex-direction:column}}
+
+/* BOOK YOUR SLOT */
+.booking-strip{margin-top:18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.book-slot-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:13px;text-decoration:none;font-size:13px;font-weight:900;color:#fff;background:linear-gradient(135deg,#25d366,#18a957);border:1px solid rgba(255,255,255,.18);box-shadow:0 12px 28px rgba(37,211,102,.22),inset 0 1px 0 rgba(255,255,255,.24);transition:.25s}
+.book-slot-btn:hover{transform:translateY(-3px);box-shadow:0 17px 35px rgba(37,211,102,.32)}
+.booking-note{font-size:11px;color:#91a0b8}
+.booking-note strong{color:#dfe8f7}
+.course-actions{display:grid;grid-template-columns:1fr;gap:9px}
+.curriculum-btn{width:100%;padding:13px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.055);color:#dce6f5;font-weight:800;cursor:pointer;transition:.25s}
+.curriculum-btn:hover{background:rgba(124,108,255,.14);border-color:rgba(124,108,255,.42);transform:translateY(-2px)}
+.cta-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.whatsapp-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:13px;text-decoration:none;font-weight:900;color:#fff;background:linear-gradient(135deg,#25d366,#159f50);box-shadow:0 14px 30px rgba(37,211,102,.20);transition:.25s}
+.whatsapp-btn:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(37,211,102,.30)}
+@media(max-width:700px){.booking-strip{align-items:stretch;flex-direction:column}.book-slot-btn{width:100%}.booking-note{text-align:center}.course-actions{gap:8px}}
+
+.whatsapp-submit-btn{display:flex;align-items:center;justify-content:center;margin-top:10px;padding:13px;border-radius:12px;text-decoration:none;font-weight:900;color:#fff;background:linear-gradient(135deg,#25d366,#159f50);box-shadow:0 12px 26px rgba(37,211,102,.2)}
+@media(max-width:700px){.nav-links{display:none}.hero-actions .secondary-btn{width:100%;text-align:center}}
+</style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#"><span class="brand-mark">IT</span><span>careerinitwithshubham</span></a>
+      <div class="nav-links"><a href="#courses">Courses</a><a href="#why-us">Why Us</a><a href="#faq">FAQ</a><a href="https://m.youtube.com/@careerinitwithshubham" target="_blank" rel="noopener">Demo Lecture</a><a class="nav-btn" href="#courses">Enroll Now</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">ONLINE IT TRAINING</span>
+          <h1>Build practical skills in <span class="gradient">Linux, Cloud & Automation.</span></h1>
+          <p class="hero-copy">Instructor-led training focused on real-world administration, cloud services, automation and scripting.</p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#courses">Explore Courses</a><a class="secondary-btn" href="https://m.youtube.com/@careerinitwithshubham" target="_blank" rel="noopener">▶ Watch Demo Lecture</a>
+          </div>
+          <div class="trust-row">
+            <div><strong>5</strong><span>Career-focused courses</span></div>
+            <div><strong>8 Days</strong><span>Linux program</span></div>
+            <div><strong>100%</strong><span>Practical focus</span></div>
+          </div>
+        </div>
+        <div class="visual-wrap">
+          <div class="glow"></div>
+          <div class="device">
+            <div class="device-top"><i></i><i></i><i></i><span>careerinitwithshubham.dev</span></div>
+            <div class="device-body">
+              <div class="code-line"><span class="p">$</span> whoami</div>
+              <div class="code-line"><span class="g">careerinitwithshubham</span></div>
+              <div class="code-line"><span class="p">$</span> skills --build</div>
+              <div class="code-line"><span class="v">Linux</span> • <span class="v">AWS</span> • <span class="v">Shell</span> • <span class="v">Ansible</span></div>
+              <div class="code-line"><span class="p">$</span> training --status</div>
+              <div class="code-line"><span class="g">✓ Practical learning enabled</span></div>
+              <div class="skill-stack">
+                <div class="skill">🐧 Linux<small>L1 & L2</small></div>
+                <div class="skill">☁️ AWS<small>10 Services</small></div>
+                <div class="skill">🐚 Shell<small>Scripting</small></div>
+                <div class="skill">⚙️ Ansible<small>Automation</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="badge-float">Learn. Build. <span>Grow.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses" class="courses-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">TRAINING PROGRAMS</span>
+          <h2>Choose your next skill</h2>
+          <p>Practical training designed around the tools used in Linux, Cloud, Automation and Data environments.</p>
+        </div>
+
+        <div class="course-grid">
+          <article class="course-card featured course-linux">
+            <div class="course-visual terminal-3d">
+              <div class="mini-top"><i></i><i></i><i></i><span>linux@training:~</span></div>
+              <div class="mini-code"><b>$</b> whoami<br><em>linux_engineer</em><br><b>$</b> learn --l1-l2<br><strong>✓ ready</strong></div>
+              <div class="visual-badge">🐧 LINUX</div>
+            </div>
+            <div class="course-tag">8 DAYS • FOUNDATION + L2</div>
+            <h3>Linux L1 & L2 Training</h3>
+            <p>Hands-on Linux administration, troubleshooting and practical L1/L2 operations.</p>
+            <ul><li>Linux administration</li><li>Users, permissions & processes</li><li>Networking & troubleshooting</li><li>Practical commands</li></ul>
+            <div class="course-bottom"><div class="price">₹999 <small>/ 8 days</small></div><div class="course-actions"><button class="curriculum-btn" data-curriculum="linux">▣ &nbsp;View Full Curriculum</button><button class="enroll-btn" data-course="Linux L1 & L2 Training" data-price="₹999 / 8 days">Enroll Now</button><a class="book-slot-btn" href="https://wa.me/917838379471?text=Hi%20Shubham%2C%20I%20want%20to%20book%20a%20slot%20for%20Linux%20L1%20&%20L2%20Training." target="_blank" rel="noopener">💬 BOOK YOUR SLOT</a></div></div>
+          </article>
+
+          <article class="course-card course-aws">
+            <div class="course-visual cloud-3d">
+              <div class="cloud-shape">☁</div>
+              <div class="service-chip s1">EC2</div><div class="service-chip s2">S3</div><div class="service-chip s3">IAM</div><div class="service-chip s4">VPC</div>
+              <div class="visual-badge">☁ AWS</div>
+            </div>
+            <div class="course-tag">10 MAJOR SERVICES</div>
+            <h3>AWS Major Services Training</h3>
+            <p>Build a practical foundation across 10 major AWS services and core cloud concepts.</p>
+            <ul><li>10 major AWS services</li><li>Cloud fundamentals</li><li>IAM & security basics</li><li>Practical AWS workflow</li></ul>
+            <div class="course-bottom"><div class="price">₹1,500</div><div class="course-actions"><button class="curriculum-btn" data-curriculum="aws">▣ &nbsp;View Full Curriculum</button><button class="enroll-btn" data-course="AWS Major 10 Services Training" data-price="₹1,500">Enroll Now</button><a class="book-slot-btn" href="https://wa.me/917838379471?text=Hi%20Shubham%2C%20I%20want%20to%20book%20a%20slot%20for%20AWS%20Major%2010%20Services%20Training." target="_blank" rel="noopener">💬 BOOK YOUR SLOT</a></div></div>
+          </article>
+
+          <article class="course-card course-shell">
+            <div class="course-visual shell-3d">
+              <div class="shell-window"><span>$</span> for file in *.log;<br>&nbsp;&nbsp;do echo "backup";<br>&nbsp;&nbsp;done<br><b>✓ automation</b></div>
+              <div class="visual-badge">🐚 SHELL</div>
+            </div>
+            <div class="course-tag">AUTOMATION</div>
+            <h3>Shell Scripting Training</h3>
+            <p>Learn Bash scripting to automate repetitive Linux administration tasks.</p>
+            <ul><li>Bash fundamentals</li><li>Variables & conditions</li><li>Loops & functions</li><li>Automation scripts</li></ul>
+            <div class="course-bottom"><div class="price">₹699</div><div class="course-actions"><button class="curriculum-btn" data-curriculum="shell">▣ &nbsp;View Full Curriculum</button><button class="enroll-btn" data-course="Shell Scripting Training" data-price="₹599">Enroll Now</button><a class="book-slot-btn" href="https://wa.me/917838379471?text=Hi%20Shubham%2C%20I%20want%20to%20book%20a%20slot%20for%20Shell%20Scripting%20Training." target="_blank" rel="noopener">💬 BOOK YOUR SLOT</a></div></div>
+          </article>
+
+          <article class="course-card course-ansible">
+            <div class="course-visual ansible-3d">
+              <div class="gear gear-a">⚙</div><div class="gear gear-b">⚙</div>
+              <div class="playbook"><span>- hosts:</span> servers<br>&nbsp;&nbsp;tasks:<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: deploy<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>✓ automated</b></div>
+              <div class="visual-badge">⚙ ANSIBLE</div>
+            </div>
+            <div class="course-tag">DEVOPS • AUTOMATION</div>
+            <h3>Ansible Training</h3>
+            <p>Learn configuration management, playbooks and infrastructure automation with Ansible.</p>
+            <ul><li>Inventory & YAML</li><li>Playbooks</li><li>Variables & handlers</li><li>Automation basics</li></ul>
+            <div class="course-bottom"><div class="price">₹699</div><div class="course-actions"><button class="curriculum-btn" data-curriculum="ansible">▣ &nbsp;View Full Curriculum</button><button class="enroll-btn" data-course="Ansible Training" data-price="₹599">Enroll Now</button><a class="book-slot-btn" href="https://wa.me/917838379471?text=Hi%20Shubham%2C%20I%20want%20to%20book%20a%20slot%20for%20Ansible%20Training." target="_blank" rel="noopener">💬 BOOK YOUR SLOT</a></div></div>
+          </article>
+
+          <article class="course-card course-sql">
+            <div class="course-visual sql-3d">
+              <div class="db-cylinder"><span>SQL</span><i></i><i></i><i></i></div>
+              <div class="query-card">SELECT <b>skills</b><br>FROM training<br><strong>WHERE future = 'yes';</strong></div>
+              <div class="visual-badge">▣ SQL</div>
+            </div>
+            <div class="course-tag">DATABASE • SQL</div>
+            <h3>SQL Training</h3>
+            <p>Learn SQL fundamentals, queries and database concepts with practical examples.</p>
+            <ul><li>SELECT & filtering</li><li>Joins & relationships</li><li>Functions & grouping</li><li>Practical query writing</li></ul>
+            <div class="course-bottom"><div class="price contact-price">₹799</div><div class="course-actions"><button class="curriculum-btn" data-curriculum="sql">▣ &nbsp;View Full Curriculum</button><button class="enroll-btn" data-course="SQL Training" data-price="₹799">Enroll Now</button><a class="book-slot-btn" href="https://wa.me/917838379471?text=Hi%20Shubham%2C%20I%20want%20to%20book%20a%20slot%20for%20SQL%20Training." target="_blank" rel="noopener">💬 BOOK YOUR SLOT</a></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-us" class="section light">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">WHY CAREERINITWITHSHUBHAM</span><h2>Built for practical IT learning</h2><p>Focused learning paths for Linux, cloud, scripting, automation and SQL.</p></div>
+        <div class="benefits">
+          <div><b>01</b><h3>Hands-on practice</h3><p>Work through commands, configuration and real administration workflows.</p></div>
+          <div><b>02</b><h3>Structured learning</h3><p>Clear topics arranged from fundamentals to practical operations.</p></div>
+          <div><b>03</b><h3>Career focused</h3><p>Build skills around tools commonly used in IT infrastructure and cloud roles.</p></div>
+          <div><b>04</b><h3>Small, focused topics</h3><p>Each course concentrates on a defined technology so learning stays manageable.</p></div>
+          <div><b>05</b><h3>Practical examples</h3><p>Learn through commands, scripts, queries, playbooks and cloud workflows.</p></div>
+          <div><b>06</b><h3>Direct enquiry</h3><p>Submit your details from the website and the training team can contact you.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">FAQ</span><h2>Common questions</h2></div>
+        <div class="faq-grid">
+          <details><summary>How do I enroll?</summary><p>Choose a course and tap Enroll Now. Enter your name, email and mobile number, then submit the form.</p></details>
+          <details><summary>Will I receive a confirmation?</summary><p>After a successful submission, the website shows a confirmation message and sends the enquiry through the configured Web3Forms workflow.</p></details>
+          <details><summary>Which courses are available?</summary><p>Linux L1 & L2, AWS Major 10 Services, Shell Scripting, Ansible and SQL.</p></details>
+          <details><summary>Can I ask about batch timing?</summary><p>Yes. Submit an enquiry and the training team can share the current batch information.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-cta">
+      <div class="container cta-inner">
+        <div><span class="eyebrow">START LEARNING</span><h2>Choose a course and take the next step.</h2><p>Explore the curriculum or send an enrollment enquiry in a few seconds.</p></div>
+        <div class="cta-actions"><a class="primary-btn" href="#courses">Explore Courses</a><a class="whatsapp-btn" href="https://wa.me/917838379471?text=Hi%20Shubham%2C%20I%20want%20to%20book%20a%20training%20slot." target="_blank" rel="noopener">💬 BOOK YOUR SLOT</a><span class="booking-note"><strong>WhatsApp:</strong> 7838379471</span></div>
+      </div>
+    </section>
+
+</main>
+
+  <div class="modal" id="curriculumModal" aria-hidden="true">
+    <div class="modal-backdrop" data-curriculum-close></div>
+    <div class="modal-box curriculum-box" role="dialog" aria-modal="true">
+      <button class="close" data-curriculum-close aria-label="Close">×</button>
+      <div class="modal-head"><span class="eyebrow">CURRICULUM</span><h2 id="curriculumTitle">Course curriculum</h2><p>Key topics covered in the training.</p></div>
+      <ul class="curriculum-list" id="curriculumList"></ul>
+      <button class="submit-btn" id="curriculumEnroll">Enroll in this course</button>
+    </div>
+  </div>
+
+  <div class="modal" id="enrollModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close" data-close aria-label="Close">×</button>
+      <div class="modal-head">
+        <span class="eyebrow">ENROLLMENT</span>
+        <h2 id="modalTitle">Join the training</h2>
+        <p id="selectedCourse">Course</p>
+      </div>
+      <form id="enrollForm">
+        <input type="hidden" id="course" name="course">
+        <input type="hidden" id="fee" name="fee">
+        <label>Full Name<input name="name" type="text" placeholder="Enter your name" required></label>
+        <label>Email Address<input name="email" type="email" placeholder="you@example.com" required></label>
+        <label>Mobile Number<input name="mobile" type="tel" inputmode="numeric" pattern="[0-9+\-\s]{8,15}" placeholder="Enter mobile number" required></label>
+        <button class="submit-btn" type="submit" id="submitBtn">Send Details to Email + WhatsApp →</button>
+        <p class="form-note">By submitting, your enrollment details are sent to the configured email and prepared in WhatsApp for 7838379471. Tap Send in WhatsApp to complete delivery.</p>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </div>
+  </div>
+
+  <footer><div class="container footer-inner"><span>© 2026 careerinitwithshubham</span><span>Linux • AWS • Shell • Ansible • SQL</span></div></footer>
+  <script>
+// Web3Forms email configuration
+// Recipient configured in the Web3Forms account: shubhamtechm1234@gmail.com
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+const WEB3FORMS_ACCESS_KEY = "8d78150b-1dc4-4642-9845-083b4ae294c1";
+
+const modal = document.getElementById("enrollModal");
+const form = document.getElementById("enrollForm");
+const statusEl = document.getElementById("formStatus");
+const submitBtn = document.getElementById("submitBtn");
+
+const curriculumModal = document.getElementById("curriculumModal");
+const curriculumTitle = document.getElementById("curriculumTitle");
+const curriculumList = document.getElementById("curriculumList");
+const curriculumEnroll = document.getElementById("curriculumEnroll");
+let selectedCurriculum = null;
+const curriculumData = {
+  linux: {title:"Linux L1 & L2 Training", course:"Linux L1 & L2 Training", price:"₹999 / 8 days", items:["Linux administration & filesystem","Users, groups & permissions","Processes, services & logs","Networking & troubleshooting","Storage, packages & practical commands","L1/L2 troubleshooting workflows"]},
+  aws: {title:"AWS Major 10 Services Training", course:"AWS Major 10 Services Training", price:"₹1,500", items:["EC2","S3","IAM","VPC","RDS","CloudWatch","Lambda","Route 53","ELB","Auto Scaling"]},
+  shell: {title:"Shell Scripting Training", course:"Shell Scripting Training", price:"₹699", items:["Bash fundamentals","Variables, conditions & input","Loops & functions","Files, text processing & logs","Automation scripts","Practical Linux automation"]},
+  ansible: {title:"Ansible Training", course:"Ansible Training", price:"₹699", items:["Inventory & YAML","Playbooks & tasks","Variables, facts & handlers","Templates","Roles & reusable automation","Practical deployment workflow"]},
+  sql: {title:"SQL Training", course:"SQL Training", price:"₹799", items:["SELECT, filtering & sorting","Joins & relationships","Aggregate functions & GROUP BY","Subqueries & practical queries","Database concepts","Query writing practice"]}
+};
+
+document.querySelectorAll("[data-curriculum]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const data=curriculumData[btn.dataset.curriculum];
+    if(!data) return;
+    selectedCurriculum=data;
+    curriculumTitle.textContent=data.title;
+    curriculumList.innerHTML=data.items.map(x=>`<li>${x}</li>`).join("");
+    curriculumModal.classList.add("open");
+    curriculumModal.setAttribute("aria-hidden","false");
+  });
+});
+
+document.querySelectorAll("[data-curriculum-close]").forEach(el=>el.addEventListener("click",closeCurriculum));
+function closeCurriculum(){curriculumModal.classList.remove("open");curriculumModal.setAttribute("aria-hidden","true");}
+curriculumEnroll.addEventListener("click",()=>{
+  closeCurriculum();
+  if(selectedCurriculum){
+    document.getElementById("course").value=selectedCurriculum.course;
+    document.getElementById("fee").value=selectedCurriculum.price;
+    document.getElementById("selectedCourse").textContent=`${selectedCurriculum.course} — ${selectedCurriculum.price}`;
+    statusEl.textContent=""; statusEl.className="form-status";
+    modal.classList.add("open"); modal.setAttribute("aria-hidden","false");
+    setTimeout(()=>document.querySelector('[name="name"]').focus(),50);
+  }
+});
+
+document.querySelectorAll(".enroll-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.getElementById("course").value = btn.dataset.course;
+    document.getElementById("fee").value = btn.dataset.price;
+    document.getElementById("selectedCourse").textContent =
+      `${btn.dataset.course} — ${btn.dataset.price}`;
+    statusEl.textContent = "";
+    statusEl.className = "form-status";
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    setTimeout(() => document.querySelector('[name="name"]').focus(), 50);
+  });
+});
+
+document.querySelectorAll("[data-close]").forEach(el => el.addEventListener("click", closeModal));
+document.addEventListener("keydown", e => { if (e.key === "Escape") { closeModal(); closeCurriculum(); } });
+
+function closeModal() {
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (!form.reportValidity()) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending details...";
+  statusEl.textContent = "";
+  statusEl.className = "form-status";
+
+  const formData = new FormData(form);
+  const name = formData.get("name") || "";
+  const email = formData.get("email") || "";
+  const mobile = formData.get("mobile") || "";
+  const course = formData.get("course") || "Training enquiry";
+  const fee = formData.get("fee") || "";
+
+  const waText = [
+    "New Training Enrollment",
+    "",
+    "Course: " + course,
+    fee ? "Fee: " + fee : "",
+    "Name: " + name,
+    "Email: " + email,
+    "Mobile: " + mobile,
+    "",
+    "Please contact me regarding this enrollment."
+  ].filter(Boolean).join("\n");
+  const waUrl = "https://wa.me/917838379471?text=" + encodeURIComponent(waText);
+
+  // Send the enrollment to the configured email through Web3Forms.
+  formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+  formData.append("subject", "New Training Enrollment - " + course);
+  formData.append("from_name", "CareerInitWithShubham Website");
+  formData.append("replyto", email);
+  formData.append("botcheck", "");
+
+  try {
+    const response = await fetch(WEB3FORMS_ENDPOINT, {
+      method: "POST",
+      body: formData,
+      headers: { "Accept": "application/json" }
+    });
+    const result = await response.json();
+    if (result.success !== true) throw new Error(result.message || "Email submission failed");
+
+    // Open the WhatsApp composer after email succeeds. The message is already filled
+    // with the same enrollment details; the user only has to tap Send in WhatsApp.
+    const waWindow = window.open(waUrl, "_blank", "noopener");
+
+    statusEl.textContent = waWindow
+      ? "✓ Email sent. WhatsApp opened with the same details — tap Send."
+      : "✓ Email sent. Tap the WhatsApp button below to send the same details.";
+    statusEl.className = "form-status success";
+    submitBtn.textContent = "Email Sent ✓";
+
+    // Always provide a visible WhatsApp button so mobile browsers that block popups
+    // still let the user send the exact same enrollment message.
+    const oldFallback = form.querySelector(".whatsapp-submit-btn");
+    if (oldFallback) oldFallback.remove();
+    const fallback = document.createElement("a");
+    fallback.href = waUrl;
+    fallback.target = "_blank";
+    fallback.rel = "noopener";
+    fallback.className = "whatsapp-submit-btn";
+    fallback.textContent = "💬 Send Same Details on WhatsApp →";
+    form.appendChild(fallback);
+  } catch (error) {
+    statusEl.textContent = "Email could not be sent. Please try again.";
+    statusEl.className = "form-status error";
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send Details to Email + WhatsApp →";
+  }
+});
+
+</script>
+</body>
+</html>
